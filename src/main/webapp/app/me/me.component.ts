@@ -2,27 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { Account, Principal } from '../shared';
+import { GitService, ResponseWrapper, Principal, Account } from '../shared';
 
 @Component({
-    selector: 'jhi-home',
-    templateUrl: './home.component.html',
+    providers: [GitService],
+    selector: 'jhi-me',
+    templateUrl: './me.component.html',
     styleUrls: [
-        'home.css'
+        'me.css'
     ]
 
 })
-export class HomeComponent implements OnInit {
+export class MeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
+    data: Object;
 
-    constructor(
-        private principal: Principal,
-        private eventManager: JhiEventManager
-    ) {
+    constructor(private principal: Principal, private gitService: GitService, private eventManager: JhiEventManager) {
     }
 
     ngOnInit() {
+        this.load();
         this.principal.identity().then((account) => {
             this.account = account;
         });
@@ -39,6 +39,17 @@ export class HomeComponent implements OnInit {
 
     isAuthenticated() {
         return this.principal.isAuthenticated();
+    }
+
+    load() {
+        this.gitService.query('/user').subscribe(
+            (res: ResponseWrapper) => {
+                this.data = res.json;
+            },
+            (res: ResponseWrapper) => {
+                alert(res.json.message)
+            }
+        );
     }
 
 }

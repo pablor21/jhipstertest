@@ -5,7 +5,7 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileService } from '../profiles/profile.service';
 import { Principal, LoginModalService, LoginService } from '../../shared';
 
-import { VERSION } from '../../app.constants';
+import { VERSION, GITHUB_CLIENT_ID} from '../../app.constants';
 
 @Component({
     selector: 'jhi-navbar',
@@ -21,16 +21,18 @@ export class NavbarComponent implements OnInit {
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
     version: string;
+    gitHubClientId: string;
 
     constructor(
         private loginService: LoginService,
         private principal: Principal,
-        private loginModalService: LoginModalService,
+        // private loginModalService: LoginModalService,
         private profileService: ProfileService,
         private router: Router
     ) {
         this.version = VERSION ? 'v' + VERSION : '';
         this.isNavbarCollapsed = true;
+        this.gitHubClientId = GITHUB_CLIENT_ID;
     }
 
     ngOnInit() {
@@ -49,7 +51,8 @@ export class NavbarComponent implements OnInit {
     }
 
     login() {
-        this.modalRef = this.loginModalService.open();
+        // this.modalRef = this.loginModalService.open();
+        location.href = 'https://github.com/login/oauth/authorize?client_id=' + this.gitHubClientId;
     }
 
     logout() {

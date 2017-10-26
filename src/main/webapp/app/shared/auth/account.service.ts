@@ -8,7 +8,7 @@ export class AccountService  {
     constructor(private http: Http) { }
 
     get(): Observable<any> {
-        return this.http.get(SERVER_API_URL + 'api/account').map((res: Response) => res.json());
+        return this.http.get(SERVER_API_URL + 'api/github/current').map((res: Response) => res.json());
     }
 
     save(account: any): Observable<Response> {

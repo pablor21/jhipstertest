@@ -9,6 +9,7 @@ import { GithubClientHomeModule } from './home/home.module';
 import { GithubClientAdminModule } from './admin/admin.module';
 import { GithubClientAccountModule } from './account/account.module';
 import { GithubClientEntityModule } from './entities/entity.module';
+import { GithubClientMeModule } from './me/me.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -33,8 +34,9 @@ import {
         GithubClientSharedModule,
         GithubClientHomeModule,
         GithubClientAdminModule,
-        GithubClientAccountModule,
+        // GithubClientAccountModule,
         GithubClientEntityModule,
+        GithubClientMeModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

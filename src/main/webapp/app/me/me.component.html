@@ -1,0 +1,38 @@
+<div class="row">
+
+    <div class="col-md-12">
+
+
+        <div [ngSwitch]="isAuthenticated()">
+            <div class="" *ngSwitchCase="true">
+                <span *ngIf="data"
+                >
+                <h1 class="display-4">"{{account.login}}" Github data</h1>
+                <p class="lead">This is your data on github</p>
+                <div class="table-responsive">
+                     <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Field Value</th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let k of data | keys">
+                    <td>{{k.key}}</td>
+                    <td>{{k.value}}</td>
+
+
+                    </tr>
+                </table>
+                    </div>
+                </span>
+            </div>
+
+            <div class="alert alert-warning" *ngSwitchCase="false">
+                You are not logged in yet!
+            </div>
+        </div>
+
+
+    </div>
+</div>

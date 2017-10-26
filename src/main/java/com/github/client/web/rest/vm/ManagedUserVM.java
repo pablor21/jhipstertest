@@ -1,6 +1,7 @@
 package com.github.client.web.rest.vm;
 
 import com.github.client.service.dto.UserDTO;
+
 import javax.validation.constraints.Size;
 
 import java.time.Instant;

@@ -1,0 +1,16 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "login",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171026070444",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "user",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
