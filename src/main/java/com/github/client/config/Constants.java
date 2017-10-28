@@ -15,8 +15,8 @@ public final class Constants {
     /**
      * GITHUB AUTH
      */
-    public static final String GITHUB_CLIENT_ID="Iv1.d9bfb337753f3e6c";
-    public static final String GITHUB_CLIENT_SECRET="cbbf40dcbd3dd771f870d5577b3a6b4421c23d6b";
+    public static final String GITHUB_CLIENT_ID="6dc2f2a5b6540055df91";
+    public static final String GITHUB_CLIENT_SECRET="f6e26f295ee6cb0d916a948bec3bf104a8c24db1";
     public static final String GITHUB_BASE_URL = "https://github.com/";
     public static final String GITHUB_API_URL = "https://api.github.com/";
 

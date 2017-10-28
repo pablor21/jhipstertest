@@ -40,6 +40,14 @@ public class GithubResource {
 
     }
 
+    @GetMapping("/login")
+    @Timed
+    public String login(HttpServletRequest request) {
+        //service.callApi('https://github.com/login/oauth/authorize?client_id=6dc2f2a5b6540055df91')
+        return "";
+    }
+
+
     @GetMapping("/success")
     @Timed
     public RedirectView success(HttpServletRequest request, @RequestParam(value = "code") String code) {

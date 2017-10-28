@@ -5,7 +5,7 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileService } from '../profiles/profile.service';
 import { Principal, LoginModalService, LoginService } from '../../shared';
 
-import { VERSION, GITHUB_CLIENT_ID} from '../../app.constants';
+import { VERSION, GITHUB_CLIENT_ID, SERVER_API_URL} from '../../app.constants';
 
 @Component({
     selector: 'jhi-navbar',
@@ -52,7 +52,7 @@ export class NavbarComponent implements OnInit {
 
     login() {
         // this.modalRef = this.loginModalService.open();
-        location.href = 'https://github.com/login/oauth/authorize?client_id=' + this.gitHubClientId;
+        location.href = 'https://github.com/login/oauth/authorize?client_id=' + this.gitHubClientId + '&redirect_url=' + SERVER_API_URL + "/api/github/success" ;
     }
 
     logout() {
